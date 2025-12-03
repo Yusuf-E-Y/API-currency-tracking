@@ -1,0 +1,66 @@
+.navbar {
+    background-color: rgb(39, 41, 38);
+    padding: 5px;
+    text-align: center;
+    display: flex;              /* yan yana dizer */
+    justify-content: center;    /* ortalar */
+    gap: 25px;              
+}
+
+.currency-list {
+  display: flex;            /* yan yana diz */
+  flex-wrap: wrap;          /* sığmazsa alta geçsin */
+  justify-content: center;  /* ortala */
+  gap: 50px;                /* kutular arası boşluk */
+  list-style: none;         /* noktaları kaldır */
+  margin: 0;
+  padding: 0;
+}
+
+.currency-list li {
+  background: #2c2f2b;      /* kutu rengi */
+  padding: 15px 25px;       /* iç boşluk */
+  border-radius: 10px;      /* köşeler yuvarlak */
+  text-align: center;
+  color: aliceblue;
+  transition: 0.2s;
+}
+
+.currency-list li:hover {
+  background: #3a3d38;      /* hover efekti */
+}
+
+.navbar h3 {
+    color: aliceblue;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+.graphs{
+  text-align: center;
+}
+
+.navbar h5 {
+    color: aliceblue
+}
+
+.Situation{
+    border-radius: 10px;
+    background-color: rgb(187, 194, 196);
+    text-align: center;
+    
+}
+
+.s1{
+  display: inline-block;       /* Kutuyu yazının boyutuna göre ayarlar */
+  padding: 5px 10px;           /* İç boşluk (yukarı/aşağı, sağ/sol) */
+  border: 1px solid #000;      /* Siyah çerçeve */
+  border-radius: 5px;          /* Köşeleri yuvarlatır */
+  background-color: #3d3d8cf8;   /* Kutunun arka plan rengi */
+  font-size: 16px;      
+}
+
+.graphs{
+    margin-top: 50px;
+}
