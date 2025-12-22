@@ -1,63 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="60">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta name="author" content="Yusuf Efe Yeşil">
-    <meta name="description" content="Döviz sitesi">
-    <title>Döviz Sitesi</title>
+    <meta name="description" content="Modern Currency Dashboard">
+    <title>Currency Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    <nav class="navbar">
-    <ul class="currency-list">
-        <li>
-            <h3>USD</h3>
-            <h5>{{dolar}}</h5>
-        </li>
-        <li>
-            <h3>EUR</h3>
-            <h5>{{euro}}</h5>
-        </li>
-        <li>
-            <h3>CHF</h3>
-            <h5>{{ chf }}</h5>
-        </li>
-        <li>
-            <h3>GBP</h3>
-            <h5>{{ gbp}}</h5>
-        </li>
-        <li>
-            <h3>AUD</h3>
-            <h5>{{ aud }}</h5>
-        </li>
-        <li>
-            <h3>CAD</h3>
-            <h5>{{ cad }}</h5>
-        </li>
-    </ul>
-    </nav>
+    <div class="container">
+        <header>
+            <h1>Currency Dashboard</h1>
+            <p>Live Exchange Rates & Updates</p>
+        </header>
 
+        <!-- Main Currency Cards -->
+        <section class="currency-grid">
+            <div class="currency-card">
+                <h3>USD</h3>
+                <div class="value">{{ dolar }}</div>
+            </div>
+            <div class="currency-card">
+                <h3>EUR</h3>
+                <div class="value">{{ euro }}</div>
+            </div>
+            <div class="currency-card">
+                <h3>CHF</h3>
+                <div class="value">{{ chf }}</div>
+            </div>
+            <div class="currency-card">
+                <h3>GBP</h3>
+                <div class="value">{{ gbp }}</div>
+            </div>
+            <div class="currency-card">
+                <h3>AUD</h3>
+                <div class="value">{{ aud }}</div>
+            </div>
+            <div class="currency-card">
+                <h3>CAD</h3>
+                <div class="value">{{ cad }}</div>
+            </div>
+        </section>
 
-    <div class="Situation">
-        <h2>Mevcut Gelir</h2>
-        <p class="s1">170 Dolar ({{ dolar }}) + 240 Euro ({{ euro }}) = {{ situation }}</p>
-    </div>
+        <!-- Calculation Section -->
+        <section class="situation-section">
+            <h2>Current Portfolio Value</h2>
+            <div class="situation-value">
+                170 USD ({{ dolar }}) + 240 EUR ({{ euro }}) = {{ situation }} TL
+            </div>
+        </section>
 
-    <div class="graphs">
-        <a href="usd.html">
-            <img src="data:image/png;base64,{{ usd_graph }}" alt="USD Graph">
-        </a>
-        <img src="data:image/png;base64,{{ linear_graph }}" alt="">
-        <a href="eur.html">
-            <img src="data:image/png;base64,{{ eur_graph }}" alt="Euro Graph">
-        </a>
-        <a href="">
-            <img src="data:image/png;base64,{{ chf_graph }}" alt="">
-        </a>
+        <!-- Section: Currency Trends -->
+        <section class="graph-section">
+            <h2 class="section-title">Currency Trends</h2>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h4>USD Trend</h4>
+                    <a href="usd.html">
+                        <img src="data:image/png;base64,{{ usd_graph }}" alt="USD Price Graph">
+                    </a>
+                </div>
+                <div class="chart-card">
+                    <h4>EUR Trend</h4>
+                    <a href="eur.html">
+                        <img src="data:image/png;base64,{{ eur_graph }}" alt="EUR Price Graph">
+                    </a>
+                </div>
+                <div class="chart-card">
+                    <h4>CHF Trend</h4>
+                    <!-- Link removed as per user preference in previous edit, or can point to # -->
+                    <img src="data:image/png;base64,{{ chf_graph }}" alt="CHF Price Graph">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Market Analysis -->
+        <section class="graph-section" style="margin-top: 3rem;">
+            <h2 class="section-title">Market Analysis</h2>
+            <div class="charts-grid" style="grid-template-columns: 1fr;">
+                <div class="chart-card">
+                    <h4>Linear Prediction</h4>
+                    <img src="data:image/png;base64,{{ linear_graph }}" alt="Linear Projection Graph"
+                        style="max-width: 800px; margin: 0 auto;">
+                </div>
+            </div>
+        </section>
+
     </div>
 
 </body>
+
 </html>
