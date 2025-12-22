@@ -1,19 +1,41 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="60">
     <meta name="author" content="Yusuf Efe Yeşil">
-    <meta name="description" content="Yusuf Efe Yeşil"> 
-
-    <title>USD bilgileri</title>
+    <meta name="description" content="USD Details">
+    <title>USD Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <div>
-        <a href="index.html"><img src="/graph_usd.png" alt="USD Graph"></a>
+    <div class="container">
+        <header>
+            <h1>USD Analysis</h1>
+            <p>Historical Performance</p>
+        </header>
+
+        <section class="charts-grid" style="grid-template-columns: 1fr;">
+            <div class="chart-card">
+                <a href="/">
+                    <img src="/graph_usd.png" alt="USD Graph"
+                        style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+                </a>
+            </div>
+        </section>
+
+        <section class="situation-section" style="margin-top: 2rem;">
+            <h2>Market Insight</h2>
+            <p style="color: var(--text-secondary);">USD has shown a 40% increase in the last 2 months.</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="/" style="color: var(--accent); text-decoration: none; font-weight: 600;">&larr; Back to
+                    Dashboard</a>
+            </div>
+        </section>
     </div>
-
-    <p>Usd son 2 ayda yüzde 40 bir artış gösterdi</p>
-
 </body>
+
 </html>
