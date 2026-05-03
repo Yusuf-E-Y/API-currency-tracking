@@ -39,7 +39,7 @@ def Predict(num):
         model_Enf = LinearRegression()
         model_Enf.fit(X_ENF,y)
             
-        next_date_ENF = np.array([[X[-1, 0] + 1]])  # 2D array, bir sonraki "tarih" için
+        next_date_ENF = np.array([[X[-1, 0] + 1]])  # 2D array sonraki tarih için
         next_val = model_Enf.predict(scaler.transform(next_date_ENF))        
 
         array_Enf = np.append(array_Enf,next_val[0])
@@ -54,7 +54,7 @@ def Predict(num):
         model_INT = LinearRegression()
         model_INT.fit(X_INT,y1)
 
-        next_date_INT = np.array([[X[-1, 0] + 1]])  # 2D array, bir sonraki "tarih" için
+        next_date_INT = np.array([[X[-1, 0] + 1]])  # 2D array sonraki tarih için
         next_val1 = model_INT.predict(scaler1.transform(next_date_INT))
 
         array_Int = np.append(array_Int,next_val1[0])        
